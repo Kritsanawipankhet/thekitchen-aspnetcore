@@ -5,9 +5,8 @@
 
             <div class="products">
                 <div class="container">
-                    <div class="row">
-                        <hr />
-                        @*<div class="col">
+                    @*<div class="row">
+                        <div class="col">
                             <div
                                 class="products-bar d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-lg-start justify-content-center">
                                 <div class="products-bar-links">
@@ -43,12 +42,13 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>*@
-                    </div>
+                        </div>
+                    </div>*@
                                 @if(Model.Count() > 0)
             {
+                <hr />
                     <div class="row">
-
+                        
                     @foreach (var item in Model) {
                         <!-- Product -->
                         <div class="col-xl-4 col-md-6">
@@ -93,6 +93,7 @@
                         
                     </div>
                     }else{
+                        <hr />
                     <div class="product-empty text-center"><p><img src="~/img/empty-product-img.png"></p><br>Products Empty</div>
                 }
                 </div>

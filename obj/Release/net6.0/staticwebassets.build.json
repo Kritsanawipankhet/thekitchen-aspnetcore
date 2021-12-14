@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "cI+nz19TnmPqOf1u9ncfQ12kfR5Xx5V0bvj9myqpIMM=",
+  "Hash": "riZPYcC4BFrBuEFSgUzEqJB7kT5SGT15SDcEJyx3B4A=",
   "Source": "thekitchen-aspnetcore",
   "BasePath": "_content/thekitchen-aspnetcore",
   "Mode": "Default",
@@ -1341,6 +1341,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\img\\empty-product-img.png"
+    },
+    {
+      "Identity": "C:\\Users\\Kritsana Wipankhet\\Documents\\GitHub\\thekitchen-aspnetcore\\wwwroot\\img-products\\1212724917.jpg",
+      "SourceId": "thekitchen-aspnetcore",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Kritsana Wipankhet\\Documents\\GitHub\\thekitchen-aspnetcore\\wwwroot\\",
+      "BasePath": "_content/thekitchen-aspnetcore",
+      "RelativePath": "img-products/1212724917.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img-products\\1212724917.jpg"
     },
     {
       "Identity": "C:\\Users\\Kritsana Wipankhet\\Documents\\GitHub\\thekitchen-aspnetcore\\wwwroot\\js\\index.js",

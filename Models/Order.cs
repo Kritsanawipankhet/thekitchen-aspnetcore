@@ -13,7 +13,9 @@ namespace thekitchen_aspnetcore.Models
 
         public virtual ApplicationUser User { get; set; }
         [Required]
-        public string? OrderReceiverName { get; set; }
+        public string? OrderReceiverFirstname { get; set; }
+        [Required]
+        public string? OrderReceiverLastname { get; set; }
         [Required]
         public string? OrderReceiverPhone { get; set; }
         [Required]
@@ -25,9 +27,9 @@ namespace thekitchen_aspnetcore.Models
         [Required]
         public string? OrderDeliveryName { get; set; }
         [Required]
-        public int OrderDeliveryPrice { get; set; }
+        public int? OrderDeliveryPrice { get; set; }
         [Required]
-        public int OrderTotal { get; set; }
+        public int? OrderTotal { get; set; }
         public string? OrderPaymentReport { get; set; }
 
         public string? OrderDeliveryTrack { get ; set; }

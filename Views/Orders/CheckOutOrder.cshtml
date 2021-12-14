@@ -1,0 +1,107 @@
+﻿@model thekitchen_aspnetcore.Models.Order
+
+
+@{
+    ViewData["Title"] = "Check Out Products";
+    ViewData["pageView"] = "Check Out Products";
+}
+
+            <div class="cart-page">
+                <div class="container">
+                        <form asp-controller="Orders" asp-action="Create">
+                         <input asp-for="UserID" type="hidden" value="@(ViewBag.UserID)">
+                        <div class="row cart-process">
+                            <div class="col-lg-6">
+                                <div class="cart-process-content">
+                                    <div class="cart-process-title">Shipping Address</div>
+                                    <div class="cart-process-address">
+                                        <div class="cart-process-form">
+
+                                              <div class="row">
+                                                <div class="col-lg-6">
+                                                    <input asp-for="OrderReceiverFirstname" value="@(ViewBag.Firstname)"
+                                                        class="cart-process-input" placeholder="Firstname"
+                                                        required="required" autocomplete="off">
+                                                </div>
+                                                <div class="col-lg-6">
+                                                    <input asp-for="OrderReceiverLastname" value="@(ViewBag.Lastname)"
+                                                        class="cart-process-input" placeholder="Lastname"
+                                                        required="required" autocomplete="false">
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <input asp-for="OrderReceiverPhone" class="cart-process-input" value="@(ViewBag.PhoneNumber)"
+                                                    placeholder="Phonenumber" required="required" autocomplete="off">
+                                            </div>
+                                            <div>
+                                                <input asp-for="OrderReceiverAddress"
+                                                    class="cart-process-input" placeholder="Address" required="required"
+                                                    autocomplete="off">
+                                            </div>
+                                            <div>
+                                                <input asp-for="OrderReceiverZipcode" type="number"
+                                                    class="cart-process-input" placeholder="Zipcode" required="required"
+                                                    autocomplete="off">
+                                            </div>
+                                            <div>
+                                                <input asp-for="OrderReceiverProvince"
+                                                    class="cart-process-input" placeholder="Province" required="required"
+                                                    autocomplete="off">
+                                            </div>
+                                            <input asp-for="OrderDeliveryName" type="hidden" value="jt">
+                                            <input asp-for="OrderDeliveryPrice" type="hidden" value="50">
+                                            <input asp-for="OrderTotal" type="hidden" value="@(ViewBag.total+50)">
+                                            <input asp-for="OrderStatus" type="hidden" value="1">
+                                            <input asp-for="OrderPaymentReport" type="hidden" value="1">
+                                            <input asp-for="OrderDeliveryTrack" type="hidden" value="1">
+                                            
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="cart-process-content">
+                                    <div class="cart-process-title">Shipping Method</div>
+                                    <div class="shipping">
+                                        <ul>
+                                            <li
+                                                class="shipping-option d-flex flex-row align-items-center justify-content-between">
+                                                <label class="cart-process-radio-container"><input type="radio"
+                                                        id="radio_1" name="delivery" value="jt"
+                                                        class="cart-process-radio" checked><span
+                                                        class="cart-process-radio-mark"></span><span
+                                                        class="cart-process-radio-text">J&T Express
+                                                        Thailand </span>
+                                                </label>
+                                                <div class="cart-process-shipping-price ml-auto shipping-price">50
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="cart-process-title">Shipping Total</div>
+                                    <ul class="cart-process-total">
+                                        <li class="d-flex flex-row align-items-center justify-content-start">
+                                            <div class="cart-process-total-title">Total product price</div>
+                                            <div class="cart-process-total-price ml-auto total-price-product">@(ViewBag.total)</div>
+                                        </li>
+                                        <li class="d-flex flex-row align-items-center justify-content-start">
+                                            <div class="cart-process-total-title">Shipping cost</div>
+                                            <div class="cart-process-total-price ml-auto shipping-price">50</div>
+                                        </li>
+                                        <li class="d-flex flex-row align-items-center justify-content-start">
+                                            <div class="cart-process-total-title">Total</div>
+                                            <div class="cart-process-total-price ml-auto total-price">@(ViewBag.total+50)</div>
+                                        </li>
+                                    </ul>
+                                    <div>
+                                        <input type="submit" class="cart-checkout-button" value="Checkout"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+              

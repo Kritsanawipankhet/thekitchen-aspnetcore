@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using thekitchen_aspnetcore.Data;
@@ -11,9 +12,10 @@ using thekitchen_aspnetcore.Data;
 namespace thekitchen_aspnetcore.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20211214034612_UpdateOrderField")]
+    partial class UpdateOrderField
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -288,8 +290,7 @@ namespace thekitchen_aspnetcore.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<int?>("OrderDeliveryPrice")
-                        .IsRequired()
+                    b.Property<int>("OrderDeliveryPrice")
                         .HasColumnType("integer");
 
                     b.Property<string>("OrderDeliveryTrack")
@@ -325,8 +326,7 @@ namespace thekitchen_aspnetcore.Migrations
                     b.Property<int>("OrderStatus")
                         .HasColumnType("integer");
 
-                    b.Property<int?>("OrderTotal")
-                        .IsRequired()
+                    b.Property<int>("OrderTotal")
                         .HasColumnType("integer");
 
                     b.Property<DateTime>("Timestamp")

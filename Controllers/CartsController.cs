@@ -129,24 +129,7 @@ namespace thekitchen_aspnetcore.Controllers
             return RedirectToAction("Index", "Carts"); ;
         }
 
-        public async Task<IActionResult> Details(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var cart = await _context.Carts
-                .Include(c => c.Products)
-                .Include(c => c.User)
-                .FirstOrDefaultAsync(m => m.CartId == id);
-            if (cart == null)
-            {
-                return NotFound();
-            }
-
-            return View(cart);
-        }
+     
 
         private bool CartExists(int id)
         {

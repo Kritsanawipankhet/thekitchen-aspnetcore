@@ -62,93 +62,13 @@
                         </div>
                     </div>
                     @if(Model.Count() > 0){
-                    <form asp-action="CheckOutOrder">
-                        <div class="row cart-process">
-                            <div class="col-lg-6">
-                                <div class="cart-process-content">
-                                    <div class="cart-process-title">Shipping Address</div>
-                                    <div class="cart-process-address">
-                                        <div class="cart-process-form">
-                                            <div class="row">
-
-                                                <div class="col-lg-6">
-                                                    <input type="text" id="firstname" name="firstname"
-                                                        class="cart-process-input" placeholder="Firstname"
-                                                        required="required" autocomplete="off">
-                                                </div>
-                                                <div class="col-lg-6">
-                                                    <input type="text" id="lastname" name="lastname"
-                                                        class="cart-process-input" placeholder="Lastname"
-                                                        required="required" autocomplete="false">
-                                                </div>
-                                            </div>
-                                            <div>
-                                                <input type="phone" id="phone" name="phone" class="cart-process-input"
-                                                    placeholder="Phonenumber" required="required" autocomplete="off">
-                                            </div>
-                                            <div>
-                                                <input type="email" id="email" name="email" class="cart-process-input"
-                                                    placeholder="Email" required="required" autocomplete="off">
-                                            </div>
-                                            <div>
-                                                <input type="text" id="address" name="address"
-                                                    class="cart-process-input" placeholder="Address" required="required"
-                                                    autocomplete="off">
-                                            </div>
-                                            <div>
-                                                <input type="text" id="zipcode" name="zipcode"
-                                                    class="cart-process-input" placeholder="Zipcode" required="required"
-                                                    autocomplete="off">
-                                            </div>
-                                            <div>
-                                                <input type="text" id="province" name="province"
-                                                    class="cart-process-input" placeholder="Province" required="required"
-                                                    autocomplete="off">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="cart-process-content">
-                                    <div class="cart-process-title">Shipping Method</div>
-                                    <div class="shipping">
-                                        <ul>
-                                            <li
-                                                class="shipping-option d-flex flex-row align-items-center justify-content-between">
-                                                <label class="cart-process-radio-container"><input type="radio"
-                                                        id="radio_1" name="delivery" value="jt"
-                                                        class="cart-process-radio" checked><span
-                                                        class="cart-process-radio-mark"></span><span
-                                                        class="cart-process-radio-text">J&T Express
-                                                        Thailand </span>
-                                                </label>
-                                                <div class="cart-process-shipping-price ml-auto shipping-price">50
-                                                </div>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div class="cart-process-title">Shipping Total</div>
-                                    <ul class="cart-process-total">
-                                        <li class="d-flex flex-row align-items-center justify-content-start">
-                                            <div class="cart-process-total-title">Total product price</div>
-                                            <div class="cart-process-total-price ml-auto total-price-product">@(ViewBag.total)</div>
-                                        </li>
-                                        <li class="d-flex flex-row align-items-center justify-content-start">
-                                            <div class="cart-process-total-title">Shipping cost</div>
-                                            <div class="cart-process-total-price ml-auto shipping-price">50</div>
-                                        </li>
-                                        <li class="d-flex flex-row align-items-center justify-content-start">
-                                            <div class="cart-process-total-title">Total</div>
-                                            <div class="cart-process-total-price ml-auto total-price">@(ViewBag.total+50)</div>
-                                        </li>
-                                    </ul>
-                                    <div class="cart-checkout-button"><a href="#"><i class="fa fa-shopping-cart"></i>
-                                            Checkout</a></div>
-                                </div>
-                            </div>
-                        </div>
-                    </form>
+                           		<div class="cart-buttons d-flex flex-row align-items-start justify-content-start">
+									<div
+										class="cart-buttons-inner ml-sm-auto d-flex flex-row align-items-start justify-content-start flex-wrap">
+										<div class="button button-continue trans_200"><a asp-controller="Orders" asp-action="CheckOutOrder">Continue
+												Checkout</a></div>
+									</div>
+								</div>
                     }
                 </div>
             </div>

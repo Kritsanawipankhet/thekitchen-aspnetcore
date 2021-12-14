@@ -17,7 +17,7 @@
                             <a href="#"> &nbsp;Hello, @User.Identity?.Name!</a>
                             @if(User.IsInRole("Admin")){
                                 <a asp-controller="Products" asp-action="ProductManage"><i class="fa fa-archive"></i> &nbsp;จัดการรายการสินค้า</a>
-                                <a asp-controller="Order" asp-action="OrderManage"><i class="fa fa-clipboard"></i> &nbsp;จัดการรายการสั่งซื้อ</a>
+                                <a href="#"> <i><class="fa fa-clipboard"></i> &nbsp;จัดการรายการสั่งซื้อ</a>
                                 <hr/>
                             }
                             <a asp-area="Identity" asp-page="/Account/Manage/Index"><i class="fa fa-user"></i> &nbsp;ข้อมูลผู้ใช้งาน</a>

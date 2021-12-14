@@ -1,0 +1,94 @@
+﻿@model thekitchen_aspnetcore.Models.Order
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Order</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="OrderId" />
+            <div class="form-group">
+                <label asp-for="UserID" class="control-label"></label>
+                <select asp-for="UserID" class="form-control" asp-items="ViewBag.UserID"></select>
+                <span asp-validation-for="UserID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="OrderReceiverName" class="control-label"></label>
+                <input asp-for="OrderReceiverName" class="form-control" />
+                <span asp-validation-for="OrderReceiverName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="OrderReceiverPhone" class="control-label"></label>
+                <input asp-for="OrderReceiverPhone" class="form-control" />
+                <span asp-validation-for="OrderReceiverPhone" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="OrderReceiverAddress" class="control-label"></label>
+                <input asp-for="OrderReceiverAddress" class="form-control" />
+                <span asp-validation-for="OrderReceiverAddress" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="OrderReceiverZipcode" class="control-label"></label>
+                <input asp-for="OrderReceiverZipcode" class="form-control" />
+                <span asp-validation-for="OrderReceiverZipcode" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="OrderReceiverProvince" class="control-label"></label>
+                <input asp-for="OrderReceiverProvince" class="form-control" />
+                <span asp-validation-for="OrderReceiverProvince" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="OrderDeliveryName" class="control-label"></label>
+                <input asp-for="OrderDeliveryName" class="form-control" />
+                <span asp-validation-for="OrderDeliveryName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="OrderDeliveryPrice" class="control-label"></label>
+                <input asp-for="OrderDeliveryPrice" class="form-control" />
+                <span asp-validation-for="OrderDeliveryPrice" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="OrderTotal" class="control-label"></label>
+                <input asp-for="OrderTotal" class="form-control" />
+                <span asp-validation-for="OrderTotal" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="OrderPaymentReport" class="control-label"></label>
+                <input asp-for="OrderPaymentReport" class="form-control" />
+                <span asp-validation-for="OrderPaymentReport" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="OrderDeliveryTrack" class="control-label"></label>
+                <input asp-for="OrderDeliveryTrack" class="form-control" />
+                <span asp-validation-for="OrderDeliveryTrack" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="OrderStatus" class="control-label"></label>
+                <input asp-for="OrderStatus" class="form-control" />
+                <span asp-validation-for="OrderStatus" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Timestamp" class="control-label"></label>
+                <input asp-for="Timestamp" class="form-control" />
+                <span asp-validation-for="Timestamp" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

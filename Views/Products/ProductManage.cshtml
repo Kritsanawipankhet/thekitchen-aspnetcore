@@ -1,0 +1,66 @@
+﻿@model IEnumerable<thekitchen_aspnetcore.Models.Product>
+@{
+    ViewData["Title"] = "Products Manage";
+    ViewData["pageView"] = "Products Manage";
+}
+
+
+
+
+<div class="container">
+    <div class="row">
+
+        <div class="col-md-4 ml-auto text-right m-2">
+            
+    <a asp-controller="Products" asp-action="ProductManageCreate" class="btn btn-warning text-center"><i class="fa fa-plus"></i> &nbsp; Add Product</a>
+        </div>
+    </div>
+<table class="table product-manage-table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Image)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Amount)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Categories)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                <a asp-controller="Products" asp-action="Index" asp-route-id="@item.ProductId" target="_blank">@Html.DisplayFor(modelItem => item.Name)</a>
+            </td>
+            <td>
+                <a asp-controller="Products" asp-action="Index" asp-route-id="@item.ProductId" target="_blank"><img src="~/img-products/@Html.DisplayFor(modelItem => item.Image)" width="180"></a>
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Amount)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Categories.Name)
+            </td>
+            <td>
+                <a asp-controller="Products" asp-action="ProductManageEdit" asp-route-id="@item.ProductId">Edit</a> |
+                <a asp-controller="Products" asp-action="Index" asp-route-id="@item.ProductId" target="_blank">Details</a> |
+                <a asp-controller="Products" asp-action="ProductManageDeleteConfirmed" asp-route-id="@item.ProductId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+</div>

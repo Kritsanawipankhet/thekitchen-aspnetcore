@@ -1,0 +1,107 @@
+﻿@model IEnumerable<thekitchen_aspnetcore.Models.Order>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.User)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OrderReceiverName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OrderReceiverPhone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OrderReceiverAddress)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OrderReceiverZipcode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OrderReceiverProvince)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OrderDeliveryName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OrderDeliveryPrice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OrderTotal)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OrderPaymentReport)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OrderDeliveryTrack)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OrderStatus)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Timestamp)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.User.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OrderReceiverName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OrderReceiverPhone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OrderReceiverAddress)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OrderReceiverZipcode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OrderReceiverProvince)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OrderDeliveryName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OrderDeliveryPrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OrderTotal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OrderPaymentReport)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OrderDeliveryTrack)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OrderStatus)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Timestamp)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.OrderId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.OrderId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.OrderId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,51 @@
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+
+<div class="d-flex flex-row align-items-center justify-content-start ml-auto">
+
+@if (SignInManager.IsSignedIn(User))
+{
+                    <div class="dropdown">
+                        <div class="user">
+                            <a href="#">
+                                <div><img class="svg" src="~/svg/user.svg" alt="">
+                                </div>
+                            </a>
+                        </div>
+                        <div class="dropdown-content text-left">
+                            <a href="#"> &nbsp;Hello, @User.Identity?.Name!</a>
+                            @if(User.IsInRole("Admin")){
+                                <a asp-controller="Products" asp-action="ProductManage"><i class="fa fa-archive"></i> &nbsp;จัดการรายการสินค้า</a>
+                                <a asp-controller="Order" asp-action="OrderManage"><i class="fa fa-clipboard"></i> &nbsp;จัดการรายการสั่งซื้อ</a>
+                                <hr/>
+                            }
+                            <a asp-area="Identity" asp-page="/Account/Manage/Index"><i class="fa fa-user"></i> &nbsp;ข้อมูลผู้ใช้งาน</a>
+                            <a asp-area="Identity" asp-page="/Account/Manage/ChangePassword"><i class="fa fa-key"></i> &nbsp;เปลี่ยนรหัสผ่าน</a>
+                            <a href="#"><i class="fa fa-list"></i> &nbsp;รายการสั่งซื้อ</a>
+                            <a asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })"><i class="fa fa-sign-out"></i> &nbsp;ออกจากระบบ</a>
+                            
+
+                        </div>
+                    </div>
+}
+else{
+                        <div class="dropdown">
+                        <div class="user">
+                            <a href="#">
+                                <div><img class="svg" src="~/svg/user.svg" alt="">
+                                </div>
+                            </a>
+                        </div>
+                        <div class="dropdown-content text-left">
+                            <a asp-area="Identity" asp-page="/Account/Register"> &nbsp;สมัครสมาชิก</a>
+                            <a asp-area="Identity" asp-page="/Account/Login"> &nbsp;เข้าสู่ระบบ</a>
+                        </div>
+                    </div>
+}
+                    <div class="cart"><a asp-controller="Carts" asp-action="Index">
+                            <div><img class="svg" src="~/svg/cart.svg" alt="">
+                            </div>
+                        </a>
+                    </div>
+</div>
